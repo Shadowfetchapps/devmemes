@@ -34,7 +34,19 @@ From Terminal:
 python3 run.py
 ```
 
-`DevMemes.app` is the author's macOS launcher. It runs `run.py` from a fixed path on the author's Mac, so it will not work from a fresh clone without editing.
+### macOS app
+
+`DevMemes.app` runs `run.py` from the folder it sits in, so it works from any clone location. It uses `.venv/bin/python3` in the repo folder if that exists, otherwise `python3` from your login shell. Set up the venv once:
+
+```bash
+cd devmemes
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
+Then double-click `DevMemes.app` in the repo folder. Keep the app inside the repo folder; it looks for `run.py` next to itself. Output goes to `~/Library/Logs/DevMemes.log`. If Python or the requirements are missing, the app shows a dialog with the setup commands.
+
+The app is ad-hoc signed, not notarized. A `git clone` launches directly. If you downloaded the repo as a ZIP, macOS blocks the first launch: right-click the app and choose Open (on macOS 15 and later, try to open it once, then click Open Anyway in System Settings > Privacy & Security), or run `xattr -dr com.apple.quarantine DevMemes.app` in the repo folder.
 
 ---
 

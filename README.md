@@ -1,18 +1,19 @@
 # DevMemes
 
-A desktop meme generator for developers and startup workers. 80+ handcrafted jokes across 6 categories — one click generates a ready-to-post meme.
+A desktop meme generator for developers and startup workers. 140 handcrafted jokes across 6 categories — one click generates a ready-to-post meme.
 
 ---
 
 ## Features
 
-- **80+ dev/startup jokes** across Debugging, Git, Meetings, Startup Life, Stack Overflow, and Deployment
-- **15 classic meme templates** — Drake, This Is Fine, Expanding Brain, Change My Mind, Epic Handshake, and more
+- **140 dev/startup jokes** across Debugging, Git, Meetings, Startup Life, Stack Overflow, and Deployment
+- **28 classic meme templates** — Drake, This Is Fine, Expanding Brain, Change My Mind, Epic Handshake, and more
 - **One-click generation** — Random Meme picks a template and joke together
 - **New Joke** — keep the same template, swap the joke
 - **Fully editable text** — tweak any text before generating
 - **Copy to clipboard** — paste straight into Slack, Twitter/X, Discord
 - **Save as PNG** — exports to `~/Downloads/DevMemes/`
+- **Browse tab** — search the Imgflip template catalog (needs internet)
 - **Dark theme** PyQt6 desktop UI
 
 ---
@@ -20,21 +21,26 @@ A desktop meme generator for developers and startup workers. 80+ handcrafted jok
 ## Setup
 
 ```bash
-cd /Volumes/NVME1TB/memegen
+git clone https://github.com/Shadowfetchapps/devmemes.git
+cd devmemes
 pip3 install -r requirements.txt
 ```
 
 ## Run
 
-**Double-click** `DevMemes.app` in Finder, or from Terminal:
+From Terminal:
 
 ```bash
 python3 run.py
 ```
 
+`DevMemes.app` is the author's macOS launcher. It runs `run.py` from a fixed path on the author's Mac, so it will not work from a fresh clone without editing.
+
 ---
 
 ## Templates
+
+A selection of the 28 built-in templates:
 
 | Template | Best for |
 |---|---|
@@ -70,9 +76,9 @@ python3 run.py
 ## Project structure
 
 ```
-memegen/
+devmemes/
 ├── memegen/
-│   ├── jokes.py      # 80+ memes + template definitions
+│   ├── jokes.py      # 140 memes + template definitions
 │   ├── generator.py  # PIL image rendering (downloads + caches templates)
 │   └── app.py        # PyQt6 dark-theme UI
 ├── cache/            # Downloaded template images (auto-created)
@@ -85,4 +91,4 @@ memegen/
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
